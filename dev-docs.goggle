@@ -1,6 +1,6 @@
 ! name: Dev Documentation
 ! description: Whitelist goggle - only curated developer documentation sites
-! public: true
+! public: false
 ! author: Cubical6
 
 ! === WHITELIST MODE ===

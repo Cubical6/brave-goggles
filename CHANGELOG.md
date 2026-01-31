@@ -5,6 +5,7 @@
 - Add `.gitignore` — track only `.goggle`, `README.md`, and `CHANGELOG.md`
 - Run `resolve-github-orgs.py` — inject 329 org-specific GitHub boost rules (19 at boost=5, 20 at boost=4, 290 at boost=3)
 - Lower generic `github.com` fallback boost from 3 to 1
+- Set goggle visibility to private (`public: false`)
 
 ## 2025-05-24
 
