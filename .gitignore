@@ -1,5 +1,12 @@
 *
 !*.goggle
+!*.rules
+!rules/
+!rules/*.rules
 !.gitignore
 !README.md
 !CHANGELOG.md
+!build-goggles.py
+!resolve-github-orgs.py
+!test_resolve_github_orgs.py
+!test_build_goggles.py

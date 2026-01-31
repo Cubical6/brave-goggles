@@ -1,0 +1,4 @@
+! === CakePHP ===
+/3.x/$boost=4,site=book.cakephp.org
+/2.x/$boost=4,site=book.cakephp.org
+$boost=2,site=book.cakephp.org

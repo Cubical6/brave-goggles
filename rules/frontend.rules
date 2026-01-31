@@ -1,0 +1,7 @@
+! === Frontend ===
+/docs/$boost=4,site=tailwindcss.com
+$boost=4,site=vite.dev
+$boost=3,site=alpinejs.dev
+$boost=3,site=svelte.dev
+/docs/5.1/$boost=3,site=getbootstrap.com
+/docs/5.$boost=2,site=getbootstrap.com

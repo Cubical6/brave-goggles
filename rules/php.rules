@@ -1,0 +1,14 @@
+! === PHP ===
+/manual/en/$boost=5,site=php.net
+/doc/$boost=3,site=getcomposer.org
+$boost=3,site=packagist.org
+$boost=4,site=docs.phpunit.de
+$boost=3,site=docs.mockery.io
+$boost=3,site=docs.guzzlephp.org
+$boost=3,site=phpspreadsheet.readthedocs.io
+$boost=3,site=socialiteproviders.com
+/doc/refman/8.0/$boost=4,site=dev.mysql.com
+/doc/refman/$boost=2,site=dev.mysql.com
+$boost=3,site=docs.laminas.dev
+/projects/doctrine-dbal/$boost=3,site=doctrine-project.org
+$boost=3,site=swagger.io
