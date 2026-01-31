@@ -7,8 +7,11 @@
 $discard
 
 ! === Laravel Ecosystem ===
-/docs/$boost=5,site=laravel.com
-/docs/$boost=5,site=livewire.laravel.com
+/docs/12.x$boost=5,site=laravel.com
+/docs/9.x$boost=4,site=laravel.com
+/docs/$boost=2,site=laravel.com
+/docs/3.x$boost=5,site=livewire.laravel.com
+/docs/$boost=2,site=livewire.laravel.com
 $boost=3,site=laravel-news.com
 $boost=3,site=laracasts.com
 $boost=3,site=laraveldaily.com
@@ -19,8 +22,11 @@ $boost=2,site=laravel-mix.com
 /doc/$boost=3,site=getcomposer.org
 $boost=3,site=packagist.org
 $boost=4,site=docs.phpunit.de
+$boost=3,site=docs.mockery.io
 $boost=3,site=docs.guzzlephp.org
-$boost=3,site=cakephp.org
+/3.x/$boost=4,site=book.cakephp.org
+/2.x/$boost=4,site=book.cakephp.org
+$boost=2,site=book.cakephp.org
 $boost=3,site=phpspreadsheet.readthedocs.io
 $boost=3,site=socialiteproviders.com
 
@@ -35,7 +41,8 @@ $boost=3,site=docs.npmjs.com
 $boost=3,site=eslint.org
 /docs/$boost=3,site=prettier.io
 $boost=3,site=zod.dev
-/docs/$boost=3,site=socket.io
+/docs/v4/$boost=3,site=socket.io
+/docs/$boost=1,site=socket.io
 $boost=3,site=expressjs.com
 $boost=3,site=nwjs.io
 
@@ -44,7 +51,8 @@ $boost=3,site=nwjs.io
 $boost=4,site=vite.dev
 $boost=3,site=alpinejs.dev
 $boost=3,site=svelte.dev
-/docs/$boost=3,site=getbootstrap.com
+/docs/5.1/$boost=3,site=getbootstrap.com
+/docs/5.$boost=2,site=getbootstrap.com
 
 ! === Python ===
 /3/$boost=4,site=docs.python.org
@@ -61,6 +69,7 @@ $boost=4,site=docs.aws.amazon.com
 $boost=5,site=stackoverflow.com
 $boost=3,site=github.com
 $boost=3,site=devdocs.io
+$boost=3,site=worktrunk.dev
 $boost=3,site=web.dev
 
 ! === Security ===
@@ -68,6 +77,39 @@ $boost=4,site=cheatsheetseries.owasp.org
 /www-project-top-ten/$boost=4,site=owasp.org
 $boost=3,site=nvd.nist.gov
 
+! === Third-party Integrations ===
+/docs/$boost=4,site=platform.openai.com
+$boost=3,site=support.exactonline.com
+$boost=3,site=developers.freshdesk.com
+$boost=3,site=docs.speechmatics.com
+/en/developer$boost=3,site=redcactus.cloud
+/en/reseller-api$boost=3,site=redcactus.cloud
+/en-us/entra/identity-platform/$boost=3,site=learn.microsoft.com
+/identity/$boost=3,site=developers.google.com
+/developer/$boost=3,site=mailchimp.com
+$boost=3,site=docs.mollie.com
+$boost=3,site=developers.cm.com
+/docs/$boost=3,site=tiny.cloud
+
+! === Third-party Libraries ===
+/doc/refman/8.0/$boost=4,site=dev.mysql.com
+/doc/refman/$boost=2,site=dev.mysql.com
+$boost=3,site=fastapi.tiangolo.com
+$boost=3,site=docs.pydantic.dev
+$boost=3,site=axios-http.com
+$boost=3,site=docs.laminas.dev
+/projects/doctrine-dbal/$boost=3,site=doctrine-project.org
+$boost=3,site=swagger.io
+
+! === IDE ===
+/help/phpstorm/$boost=5,site=jetbrains.com
+/help/pycharm/$boost=2,site=jetbrains.com
+
 ! === Tooling ===
 /metronic/docs/$boost=3,site=keenthemes.com
 /bitbucket-cloud/$boost=3,site=support.atlassian.com
+$boost=3,site=mermaid.js.org
+/manual/$boost=3,site=cli.github.com
+/manual/$boost=3,site=jqlang.github.io
+/docs/$boost=3,site=docs.pytest.org
+/docs/$boost=3,site=curl.se
