@@ -1,0 +1,73 @@
+! name: Dev Documentation
+! description: Whitelist goggle - only curated developer documentation sites
+! public: true
+! author: Cubical6
+
+! === WHITELIST MODE ===
+$discard
+
+! === Laravel Ecosystem ===
+/docs/$boost=5,site=laravel.com
+/docs/$boost=5,site=livewire.laravel.com
+$boost=3,site=laravel-news.com
+$boost=3,site=laracasts.com
+$boost=3,site=laraveldaily.com
+$boost=2,site=laravel-mix.com
+
+! === PHP ===
+/manual/en/$boost=5,site=php.net
+/doc/$boost=3,site=getcomposer.org
+$boost=3,site=packagist.org
+$boost=4,site=docs.phpunit.de
+$boost=3,site=docs.guzzlephp.org
+$boost=3,site=cakephp.org
+$boost=3,site=phpspreadsheet.readthedocs.io
+$boost=3,site=socialiteproviders.com
+
+! === Spatie ===
+/docs/$boost=4,site=spatie.be
+
+! === JavaScript / TypeScript ===
+$boost=5,site=developer.mozilla.org
+/docs/$boost=4,site=typescriptlang.org
+/docs/$boost=4,site=nodejs.org
+$boost=3,site=docs.npmjs.com
+$boost=3,site=eslint.org
+/docs/$boost=3,site=prettier.io
+$boost=3,site=zod.dev
+/docs/$boost=3,site=socket.io
+$boost=3,site=expressjs.com
+$boost=3,site=nwjs.io
+
+! === Frontend ===
+/docs/$boost=4,site=tailwindcss.com
+$boost=4,site=vite.dev
+$boost=3,site=alpinejs.dev
+$boost=3,site=svelte.dev
+/docs/$boost=3,site=getbootstrap.com
+
+! === Python ===
+/3/$boost=4,site=docs.python.org
+
+! === Infrastructure ===
+$boost=4,site=docs.docker.com
+$boost=4,site=docs.aws.amazon.com
+/docs/$boost=3,site=redis.io
+/docs/$boost=3,site=postgresql.org
+/docs/$boost=3,site=caddyserver.com
+/en/actions/$boost=3,site=docs.github.com
+
+! === General Dev Resources ===
+$boost=5,site=stackoverflow.com
+$boost=3,site=github.com
+$boost=3,site=devdocs.io
+$boost=3,site=web.dev
+
+! === Security ===
+$boost=4,site=cheatsheetseries.owasp.org
+/www-project-top-ten/$boost=4,site=owasp.org
+$boost=3,site=nvd.nist.gov
+
+! === Tooling ===
+/metronic/docs/$boost=3,site=keenthemes.com
+/bitbucket-cloud/$boost=3,site=support.atlassian.com
