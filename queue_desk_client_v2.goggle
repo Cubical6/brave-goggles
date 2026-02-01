@@ -1,0 +1,76 @@
+! name: queue_desk_client_v2
+! description: Per-project goggle for queue_desk_client_v2 (frontend, js-ts, svelte)
+! public: false
+! author: Cubical6
+
+! === WHITELIST MODE ===
+$discard
+
+! === General Dev Resources ===
+$boost=5,site=stackoverflow.com
+$boost=1,site=github.com
+$boost=3,site=devdocs.io
+$boost=3,site=worktrunk.dev
+$boost=3,site=web.dev
+
+! === Security ===
+$boost=4,site=cheatsheetseries.owasp.org
+/www-project-top-ten/$boost=4,site=owasp.org
+$boost=3,site=nvd.nist.gov
+
+! === Infrastructure ===
+$boost=4,site=docs.docker.com
+$boost=4,site=docs.aws.amazon.com
+/docs/$boost=3,site=redis.io
+/docs/$boost=3,site=postgresql.org
+/docs/$boost=3,site=caddyserver.com
+/en/actions/$boost=3,site=docs.github.com
+
+! === IDE ===
+/help/phpstorm/$boost=5,site=jetbrains.com
+/help/pycharm/$boost=2,site=jetbrains.com
+
+! === Tooling ===
+/metronic/docs/$boost=3,site=keenthemes.com
+/bitbucket-cloud/$boost=3,site=support.atlassian.com
+$boost=3,site=mermaid.js.org
+/manual/$boost=3,site=cli.github.com
+/manual/$boost=3,site=jqlang.github.io
+/docs/$boost=3,site=docs.pytest.org
+/docs/$boost=3,site=curl.se
+
+! === Frontend ===
+/docs/$boost=4,site=tailwindcss.com
+$boost=4,site=vite.dev
+$boost=3,site=alpinejs.dev
+$boost=3,site=svelte.dev
+/docs/5.1/$boost=3,site=getbootstrap.com
+/docs/5.$boost=2,site=getbootstrap.com
+
+! === JavaScript / TypeScript ===
+$boost=5,site=developer.mozilla.org
+/docs/$boost=4,site=typescriptlang.org
+/docs/$boost=4,site=nodejs.org
+$boost=3,site=docs.npmjs.com
+$boost=3,site=eslint.org
+/docs/$boost=3,site=prettier.io
+$boost=3,site=zod.dev
+/docs/v4/$boost=3,site=socket.io
+/docs/$boost=1,site=socket.io
+$boost=3,site=expressjs.com
+$boost=3,site=nwjs.io
+$boost=3,site=axios-http.com
+
+! === GitHub Dependencies (auto-generated) ===
+/sveltejs/$boost=5,site=github.com
+/eslint/$boost=4,site=github.com
+/tailwindlabs/$boost=4,site=github.com
+/definitelytyped/$boost=3,site=github.com
+/prettier/$boost=3,site=github.com
+/colinhacks/$boost=3,site=github.com
+/microsoft/$boost=3,site=github.com
+/sindresorhus/$boost=3,site=github.com
+/tsconfig/$boost=3,site=github.com
+/typescript-eslint/$boost=3,site=github.com
+/vitejs/$boost=3,site=github.com
+! === End GitHub Dependencies ===

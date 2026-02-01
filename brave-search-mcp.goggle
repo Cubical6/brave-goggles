@@ -1,3 +1,8 @@
+! name: brave-search-mcp
+! description: Per-project goggle for brave-search-mcp (js-ts)
+! public: false
+! author: Cubical6
+
 ! === WHITELIST MODE ===
 $discard
 
@@ -33,3 +38,21 @@ $boost=3,site=mermaid.js.org
 /manual/$boost=3,site=jqlang.github.io
 /docs/$boost=3,site=docs.pytest.org
 /docs/$boost=3,site=curl.se
+
+! === JavaScript / TypeScript ===
+$boost=5,site=developer.mozilla.org
+/docs/$boost=4,site=typescriptlang.org
+/docs/$boost=4,site=nodejs.org
+$boost=3,site=docs.npmjs.com
+$boost=3,site=eslint.org
+/docs/$boost=3,site=prettier.io
+$boost=3,site=zod.dev
+/docs/v4/$boost=3,site=socket.io
+/docs/$boost=1,site=socket.io
+$boost=3,site=expressjs.com
+$boost=3,site=nwjs.io
+$boost=3,site=axios-http.com
+
+! === GitHub Dependencies (auto-generated) ===
+/brave/$boost=3,site=github.com
+! === End GitHub Dependencies ===
