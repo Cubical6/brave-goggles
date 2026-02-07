@@ -38,6 +38,21 @@ $boost=3,site=mermaid.js.org
 /manual/$boost=3,site=jqlang.github.io
 /docs/$boost=3,site=docs.pytest.org
 /docs/$boost=3,site=curl.se
+$boost=3,site=git-cliff.org
+$boost=3,site=getrector.com
+$boost=3,site=pypi.org
+$boost=3,site=nginx.org
+$boost=3,site=git-scm.com
+
+! === AI/LLM ===
+$boost=4,site=docs.anthropic.com
+$boost=4,site=docs.z.ai
+$boost=3,site=promptfoo.dev
+$boost=3,site=agenticoding.ai
+
+! === Testing ===
+$boost=4,site=playwright.dev
+$boost=3,site=vitest.dev
 
 ! === Python ===
 /3/$boost=4,site=docs.python.org
