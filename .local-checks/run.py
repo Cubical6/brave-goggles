@@ -80,6 +80,8 @@ def run_steps(root, steps, dry=False):
             PYTHONDONTWRITEBYTECODE="1",
             **step.get("env", {}),
         )
+        for name in git(root, "rev-parse", "--local-env-vars").splitlines():
+            env.pop(name, None)
         for required in step.get("requires", []):
             if not (cwd / required).exists():
                 print(

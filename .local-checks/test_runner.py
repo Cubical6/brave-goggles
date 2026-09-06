@@ -68,6 +68,26 @@ class HooksTest(unittest.TestCase):
             check=False,
         )
 
+    def test_worktree_alias_does_not_leak_git_context_to_checks(self):
+        other = Path(self.temp.name) / "fixture repo"
+        other.mkdir()
+        self.assertEqual(self.git("init", "-b", "main", cwd=other).returncode, 0)
+        command = (
+            "import subprocess; "
+            f"actual = subprocess.check_output(['git', '-C', {str(other)!r}, "
+            "'rev-parse', '--show-toplevel'], text=True).strip(); "
+            f"assert actual == {str(other)!r}, actual"
+        )
+        self.write_config([{"argv": [sys.executable, "-c", command]}])
+        self.install()
+        self.commit()
+        linked = Path(self.temp.name) / "linked"
+        self.assertEqual(self.git("worktree", "add", "-b", "other", str(linked)).returncode, 0)
+        before = self.git("rev-parse", "HEAD", cwd=linked).stdout
+        result = self.git("local-checks", "full", cwd=linked)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertEqual(self.git("rev-parse", "HEAD", cwd=linked).stdout, before)
+
     def test_failed_checks_block_push_and_do_not_call_legacy(self):
         legacy = self.root / ".git/hooks/pre-push"
         legacy.write_text("#!/bin/sh\ntouch legacy-ran\n")
