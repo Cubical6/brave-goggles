@@ -2,3 +2,8 @@
 !*.goggle
 !.gitignore
 !README.md
+
+# Repository-local verification and contributor policy
+!AGENTS.md
+!.local-checks/
+!.local-checks/**

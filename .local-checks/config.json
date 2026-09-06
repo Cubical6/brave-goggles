@@ -1,0 +1,7 @@
+{
+  "quick": [],
+  "full": [],
+  "integration": [],
+  "note": "Generated artifacts only: whitespace gate; use the owning melly-v2 plugin for semantic validation and generation.",
+  "name": "brave-goggles"
+}
