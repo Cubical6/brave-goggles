@@ -449,6 +449,37 @@ class CapacityBehaviorTest(CapacityFixture):
         self.assertEqual(status["state"], "complete")
         self.assertIn("rm --force localchecks-", log.read_text())
 
+    def test_registered_resources_cleanup_containers_before_network(self):
+        root = self.repo("resource-order")
+        fake_bin = Path(self.temp.name) / "resource-order-bin"
+        fake_bin.mkdir(mode=0o700)
+        log = Path(self.temp.name) / "resource-order-docker.log"
+        docker = fake_bin / "docker"
+        docker.write_text(f'#!/bin/sh\nprintf "%s\\n" "$*" >> "{log}"\nexit 0\n')
+        docker.chmod(0o700)
+        env = dict(self.env, PATH=str(fake_bin) + os.pathsep + self.env["PATH"])
+        body = (
+            'import json, os, subprocess; '
+            'd=json.loads(os.environ["LOCAL_CHECKS_LEASE"]); '
+            'prefix="localchecks-"+d["run_id"]; '
+            'items=[("network","network"),("container","db")]; '
+            '[subprocess.run(["python3", %r, "resource-add", "--repo", %r, "--class", "heavy", "--kind", kind, "--name", prefix+"-"+suffix], env=os.environ.copy(), check=True) for kind,suffix in items]; '
+            'print("registered")'
+            % (str(CAPACITY), str(root))
+        )
+        result = subprocess.run(
+            self.command(root, "heavy", body),
+            cwd=root,
+            env=env,
+            capture_output=True,
+            text=True,
+            timeout=5,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        lines = log.read_text().splitlines()
+        container_index = next(index for index, line in enumerate(lines) if line.startswith("rm --force localchecks-"))
+        network_index = next(index for index, line in enumerate(lines) if line.startswith("network rm localchecks-"))
+        self.assertLess(container_index, network_index)
     def test_killed_supervisor_leaves_running_marker_until_recovery(self):
         root = self.repo("killed-supervisor")
         child_pid_path = root / "child.pid"

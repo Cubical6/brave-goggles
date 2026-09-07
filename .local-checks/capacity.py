@@ -489,6 +489,11 @@ class Lease:
     def cleanup_resources(self) -> None:
         """Clean exactly the resources registered by this run."""
         resources = self._resources()
+        resources.sort(
+            key=lambda resource: {"compose": 0, "container": 1, "network": 2}.get(
+                resource.get("kind"), 3
+            )
+        )
         if not resources:
             return
         docker = shutil_which("docker")
